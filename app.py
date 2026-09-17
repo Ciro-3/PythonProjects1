@@ -1,14 +1,18 @@
-# 1. Defining a New Data Collection (Updated IP list)
-target_servers = ["192.168.1.50", "192.168.1.51", "192.168.2.100", "192.168.1.52"]
+# 1. Initialize an empty list to track discovered nodes
+inventory_list = []
 
-print("--- Initializing Network Sweep ---")
+print("--- Starting Dynamic Discovery Tool ---")
 
-# 2. Iterating through the new collection
-for server in target_servers:
-    # 3. Checking for the new '192.168.2' subnet block
-    if "192.168.2" in server:
-        print(f"Skipping {server}: Isolated Management Subnet.")
-    else:
-        print(f"Scanning {server}: Connection stable. Port 80 Open.")
+# 2. Dynamically appending new items to the list
+inventory_list.append("192.168.1.50")
+inventory_list.append("192.168.2.100")
+inventory_list.append("192.168.1.55")
 
-print("--- Sweep Sequence Completed ---")
+# 3. Verifying the final list contents
+print(f"Total Devices Discovered: {len(inventory_list)}")
+print(f"Current Inventory: {inventory_list}")
+
+# 4. Processing the dynamically built list
+for device in inventory_list:
+    if "192.168.2" in device:
+        print(f" Alert: Found management node at {device}")
