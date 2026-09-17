@@ -1,19 +1,14 @@
 # 1. System Trackers
 developer_name = "Cecil"
 server_ip = "10.10.20.10"
-allocated_hours = 9
-is_connection_secure = True
+allocated_hours = 5  # Change this value later to test different paths
 
-print(f"--- Running Diagnostic Check for {developer_name} ---")
+print(f"--- Running Shift Analysis for {developer_name} ---")
 
-# 2. IF Statement evaluating a Boolean
-if is_connection_secure:
-    print(f"SUCCESS: Secure connection established to {server_ip}.")
-else:
-    print("WARNING: Unsecured connection! Check firewall rules.")
-
-# 3. IF Statement evaluating Numeric Values
+# 2. Multi-Tiered Condition using if, elif, and else
 if allocated_hours > 8:
-    print("Notice: Extended window active. Acting allowance rules apply.")
+    print("Shift Category: Extended Maintenance Window (Requires senior approval).")
+elif allocated_hours >= 4:
+    print("Shift Category: Standard Operational Window (Normal monitoring active).")
 else:
-    print("Notice: Standard operational hours window.")
+    print("Shift Category: Emergency Patch Window (Rapid deployment rules apply).")
