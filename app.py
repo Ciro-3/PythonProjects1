@@ -1,14 +1,14 @@
-# 1. System Trackers
-developer_name = "Cecil"
-server_ip = "10.10.20.10"
-allocated_hours = 5  # Change this value later to test different paths
+# 1. Defining a New Data Collection (Updated IP list)
+target_servers = ["192.168.1.50", "192.168.1.51", "192.168.2.100", "192.168.1.52"]
 
-print(f"--- Running Shift Analysis for {developer_name} ---")
+print("--- Initializing Network Sweep ---")
 
-# 2. Multi-Tiered Condition using if, elif, and else
-if allocated_hours > 8:
-    print("Shift Category: Extended Maintenance Window (Requires senior approval).")
-elif allocated_hours >= 4:
-    print("Shift Category: Standard Operational Window (Normal monitoring active).")
-else:
-    print("Shift Category: Emergency Patch Window (Rapid deployment rules apply).")
+# 2. Iterating through the new collection
+for server in target_servers:
+    # 3. Checking for the new '192.168.2' subnet block
+    if "192.168.2" in server:
+        print(f"Skipping {server}: Isolated Management Subnet.")
+    else:
+        print(f"Scanning {server}: Connection stable. Port 80 Open.")
+
+print("--- Sweep Sequence Completed ---")
