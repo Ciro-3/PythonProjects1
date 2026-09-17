@@ -1,15 +1,19 @@
-# 1. Base Variables (Strings & Integers)
+# 1. System Trackers
 developer_name = "Cecil"
-target_system = "BIQ Database"
-server_ip = "10.10.20.10"  # Storing an IP address as a string string
+server_ip = "10.10.20.10"
 allocated_hours = 9
-
-# 2. Status Tracking (Booleans)
 is_connection_secure = True
-has_active_session = False
 
-# 3. Formatted System Summary
-print(f"System Operator: {developer_name}")
-print(f"Target Environment: {target_system} ({server_ip})")
-print(f"Allocated Window: {allocated_hours} hours")
-print(f"Security Shield Status: {is_connection_secure}")
+print(f"--- Running Diagnostic Check for {developer_name} ---")
+
+# 2. IF Statement evaluating a Boolean
+if is_connection_secure:
+    print(f"SUCCESS: Secure connection established to {server_ip}.")
+else:
+    print("WARNING: Unsecured connection! Check firewall rules.")
+
+# 3. IF Statement evaluating Numeric Values
+if allocated_hours > 8:
+    print("Notice: Extended window active. Acting allowance rules apply.")
+else:
+    print("Notice: Standard operational hours window.")
